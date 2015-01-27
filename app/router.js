@@ -67,7 +67,11 @@ Router.map(function() {
     });
   });
 
-  this.resource("puppetclasses");
+  this.resource("puppetclasses", function() {
+    this.resource('puppetclass', { path: '/:puppetclass_id' }, function() {
+      this.route('edit');
+    });
+  });
   this.resource("smart-variables");
   this.resource("smart-class-parameters");
 
@@ -78,6 +82,7 @@ Router.map(function() {
   this.route("dashboard");
   this.route("radiator");
   this.route("home");
+  this.route("puppetclass");
 });
 
 export default Router;
