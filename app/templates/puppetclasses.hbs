@@ -3,7 +3,6 @@
   <div class='col-md-3'>
     <table class='table table-bordered table-hover table-striped table-two-pane'>
       <thead>
-        <th>Id</th>
         <th>Name</th>
       </thead>
       <tbody>
@@ -11,15 +10,14 @@
       {{!#each puppetclass in model itemController="puppetclass"}}
       <tr>
         <td>
-          {{puppetclass.id}}
-        </td>
-        <td>
-          {{puppetclass.name}}
+          {{#link-to 'puppetclass' puppetclass}}{{puppetclass.name}}{{/link-to}}
         </td>
       </tr>
       {{/each}}
       </tbody>
     </table>
   </div>
-  {{outlet}}
+  <div class='col-md-9'>
+    {{outlet}}
+  </div>
 </div>
