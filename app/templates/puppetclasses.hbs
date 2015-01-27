@@ -5,22 +5,16 @@
       <thead>
         <th>Id</th>
         <th>Name</th>
-        <th>Module</th>
       </thead>
       <tbody>
       {{#each puppetclass in model}}
       {{!#each puppetclass in model itemController="puppetclass"}}
       <tr>
         <td>
-        {{puppetclass.id}}
+          {{puppetclass.id}}
         </td>
         <td>
-        {{puppetclass.name2}}
-
-        </td>
-        <td>
-        {{puppetclass.module_group}}
-        {{puppetclass.module_group2}}
+          {{puppetclass.name}}
         </td>
       </tr>
       {{/each}}
