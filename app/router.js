@@ -75,14 +75,12 @@ Router.map(function() {
   this.resource("smart-variables");
   this.resource("smart-class-parameters");
 
-
   this.route('hostgroup/edit');
   this.route('review/installation');
   this.route('review/progress');
   this.route("dashboard");
   this.route("radiator");
   this.route("home");
-  this.route("puppetclass");
 });
 
 export default Router;
