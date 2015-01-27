@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Foreman Ember Cli Starter Kit</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{link-to 'Home' 'home'}}</li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CRUD Objects <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>{{link-to 'Puppet Classes' 'puppetclasses'}}</li>
+            <li>{{!link-to 'Smart Parameters' 'smart-class-parameters'}}</li>
+            <li class="divider"></li>
+            <li><a href="#">Domains</a></li>
+            <li><a href="#">Subnets</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Organizations</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      {{#if isLoggedIn}}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">
+            {{!session.content.authorizationCode.length}}
+            {{session.content.provider}}
+            {{session.authType}}&nbsp;
+            {{session.basicAuthToken}}
+            {{session.access_token}}&nbsp;
+            </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{loginUsername}} <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a {{action "invalidateSession"}}>Log out</a></li>
+          </ul>
+        </li>
+      </ul>
+      {{/if}}
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

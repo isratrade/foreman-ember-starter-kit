@@ -1,0 +1,7 @@
+{{#if showTopBar}}
+  {{partial "topbar"}}
+{{/if}}
+
+<div {{bind-attr class="isContainer:container:container-fluid"}}>
+  {{outlet}}
+</div>
