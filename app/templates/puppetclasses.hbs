@@ -3,16 +3,22 @@
   <div class='col-md-3'>
     <table class='table table-bordered table-hover table-striped table-two-pane'>
       <thead>
+        <th>Id</th>
         <th>Name</th>
+        <th>Module</th>
       </thead>
       <tbody>
-      {{#each puppetclass in model itemController="puppetclass"}}
+      {{#each puppetclass in model}}
+      {{!#each puppetclass in model itemController="puppetclass"}}
       <tr>
         <td>
-          {{#if puppetclass.isSaving}}
-            {{fa-icon 'fa-refresh' spin=true}}
-          {{/if}}
-          {{#link-to 'puppetclass' puppetclass}}{{puppetclass.name}}{{/link-to}}
+        {{puppetclass.id}}
+        </td>
+        <td>
+        {{puppetclass.name}}
+        </td>
+        <td>
+        {{puppetclass.module_name}}
         </td>
       </tr>
       {{/each}}
