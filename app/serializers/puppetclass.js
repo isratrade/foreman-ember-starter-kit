@@ -9,6 +9,20 @@ export default DS.ActiveModelSerializer.extend({
     return this._super(store, type, wrapped_payload);
   },
 
+  attrs: {
+    // module_group: 'module_name'
+    module_name2: {key: 'module_name'},
+    name2: {key: 'name'}
+  },
+
+  // normalizeHash: {
+  //   module_group: function(hash) {
+  //     hash.module_name = hash.module_group;
+  //     delete hash.module_group;
+
+  //     return hash;
+  // }
+
   // keyForAttribute: function(attr) {
   //   //var newAttr = ( (attr === 'module_name') ? 'module_group' : attr)
   //   var newAttr = attr;
