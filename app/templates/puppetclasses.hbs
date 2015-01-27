@@ -10,8 +10,8 @@
       {{!#each puppetclass in model itemController="puppetclass"}}
       <tr>
         <td>
-          {{#if isSaving}}
-            {{fa-icon 'fa-refresh' spin=true}}
+          {{#if puppetclass.isDirty}}
+            {{fa-icon 'fa-refresh' spin=true}}&nbsp;
           {{/if}}
           {{#link-to 'puppetclass' puppetclass}}{{puppetclass.name}}{{/link-to}}
         </td>

@@ -75,7 +75,6 @@ Router.map(function() {
   this.resource("smart-variables");
   this.resource("smart-class-parameters");
 
-  this.route('hostgroup/edit');
   this.route('review/installation');
   this.route('review/progress');
   this.route("dashboard");
