@@ -67,12 +67,15 @@ Router.map(function() {
     });
   });
 
+  this.resource("puppetclasses");
+  this.resource("smart-variables");
+  this.resource("smart-class-parameters");
+
 
   this.route('hostgroup/edit');
   this.route('review/installation');
   this.route('review/progress');
   this.route("dashboard");
-  this.route("puppetclasses");
   this.route("radiator");
   this.route("home");
 });
