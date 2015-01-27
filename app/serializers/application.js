@@ -2,7 +2,6 @@ import DS from 'ember-data';
 
 export default DS.ActiveModelSerializer.extend({
   extractArray: function(store, type, payload) {
-    // 'foreman-experimental-ui@model:setting:'
     var wrapped_payload = {};
     var model_name = type.toString().split(":")[1];
     wrapped_payload[model_name] = payload['results'];
