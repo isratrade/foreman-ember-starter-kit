@@ -91,6 +91,8 @@ Router.map(function() {
     });
   });
 
+  this.route("new-host", { path: '/hosts/new' });
+
   this.route('domains');
 
   this.resource('subnets', function() {
