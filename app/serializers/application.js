@@ -10,7 +10,13 @@ export default DS.ActiveModelSerializer.extend({
   extractSingle: function(store, type, payload) {
     var wrapped_payload = {};
     var model_name = type.toString().split(":")[1];
-    wrapped_payload[model_name] = payload;
+    // PUT/POST responses return with the wrapped root, but GET is unwrapped
+    // Check which response it is. Wrap it for it's not already
+    if (payload[model_name]) {
+      wrapped_payload = payload
+    } else {
+      wrapped_payload[model_name] = payload;
+    }
     return this._super(store, type, wrapped_payload);
   },
   extractMeta: function(store, type, payload) {
