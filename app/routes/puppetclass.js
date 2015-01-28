@@ -7,14 +7,16 @@ export default Ember.Route.extend({
 
   actions: {
     saveRecord: function() {
-      alert('hi');
-      // var self = this;
-      // this.get('currentModel').save().then(function() {
-      //   self.transitionTo('puppetclasses');
-      // }, function(response) {
-      //   console.log("puppetclass not saved!" + response);
-      //   alert(response);
-      // });
+      var self = this;
+      console.log(this);
+        console.log('currentModel');
+        console.log(this.get('currentModel'));
+      this.get('currentModel').save().then(function() {
+        self.transitionTo('puppetclasses');
+      }, function(response) {
+        console.log("puppetclass not saved!");
+        console.log(response);
+      });
     }
   }
 
