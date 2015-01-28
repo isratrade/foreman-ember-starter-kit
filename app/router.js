@@ -64,6 +64,8 @@ Router.map(function() {
   this.resource('hostgroups', function() {
     this.resource('hostgroup', { path: '/:hostgroup_id' }, function() {
       this.route('edit');
+      this.route("smart-class-parameters");
+      this.route("smart-variables");
     });
   });
 
@@ -77,15 +79,12 @@ Router.map(function() {
   this.resource("smart-variables");
   this.resource("smart-class-parameters");
 
-  this.resource('hostgroups', function() {
-    this.resource('hostgroup', { path: '/:hostgroup_id' }, function() {
-      this.route('edit');
-    });
-  });
-
   this.resource('hosts', function() {
     this.resource('host', { path: '/:host_id' }, function() {
       this.route('edit');
+      this.route("smart-class-parameters");
+      this.route("smart-variables");
+      this.route("parameters");
     });
   });
 

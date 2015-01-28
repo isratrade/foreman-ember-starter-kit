@@ -1,2 +1,32 @@
 <h1>Smart Variables</h1>
+
+Count is {{model.length}}
+
+    <table class="table table-bordered" style='table-layout:fixed;'>
+      <thead>
+        <tr>
+          <th>Puppet Class</th>
+          <th>Name</th>
+          <th>Default Value</th>
+        </tr>
+        </thead>
+
+      <tbody>
+      {{#each classVariable in model}}
+        <tr>
+          <td style='word-wrap:break-word;' width='100'>
+             {{classVariable.puppetclass_name}}
+          </td>
+          <td style='word-wrap:break-word;' width='100'>
+             {{classVariable.variable}}
+          </td>
+          <td>
+             {{classVariable.default_value}}
+           </td>
+        </tr>
+      {{else}}
+        <li>No smart variables found.</li>
+      {{/each}}
+      </tbody>
+    </table>
 {{outlet}}

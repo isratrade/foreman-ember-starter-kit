@@ -11,7 +11,6 @@
           {{#unless onShowPage}}
           <th>Subnet</th>
           <th>Domain</th>
-          <th></th>
           {{/unless}}
         </tr>
         </thead>
@@ -20,14 +19,13 @@
       {{#each hostgroup in model itemController="hostgroup"}}
         <tr>
           <td style='word-wrap:break-word;' width='100'>
-            {{#link-to 'hostgroup.edit' hostgroup}}
+            {{#link-to 'hostgroup' hostgroup}}
              {{hostgroup.title}}
             {{/link-to}}
           </td>
           {{#unless onShowPage}}
           <td> {{hostgroup.subnet_name}} </td>
           <td> {{hostgroup.domain_name}} </td>
-          <td> {{#link-to 'hostgroup.edit' this class='btn btn-default'}}Edit{{/link-to}}</td>
           {{/unless}}
         </tr>
       {{else}}
