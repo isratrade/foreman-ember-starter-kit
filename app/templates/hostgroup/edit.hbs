@@ -1,1 +1,31 @@
-{{outlet}}
+<br />
+<form class="form form-horizontal">
+
+ {{text-f value=content.name label="Name"}}
+
+ {{!select-f label='Domain'
+            content=domains
+            optionLabelPath="content.name"
+            optionValuePath="content.id"
+            selection=content.domain
+            value=content.domain.id
+            prompt="Select Domain"
+            }}
+
+ {{!select-f label='Subnet'
+            content=subnets
+            optionLabelPath="content.name"
+            optionValuePath="content.id"
+            selection=content.subnet
+            value=content.subnet.id
+            prompt="Select Subnet"
+            }}
+
+
+<br />
+<br />
+<button {{action 'cancel'}} class='btn btn-default'>Cancel</button>
+<button {{action 'update'}} class='btn btn-primary'>Submit</button>
+<br />
+<br />
+</form>

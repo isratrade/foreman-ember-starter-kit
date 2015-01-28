@@ -1,3 +1,9 @@
+{{#link-to 'hostgroups' tagName="h1"}}Host Groups{{/link-to}}{{onShowPage}}
+
+<div class="row">
+
+  <div {{bind-attr class="onShowPage:col-md-3:col-md-12"}}>
+
     <table class="table table-bordered" style='table-layout:fixed;'>
       <thead>
         <tr>
@@ -11,16 +17,16 @@
         </thead>
 
       <tbody>
-      {{#each itemController="hostgroup"}}
+      {{#each hostgroup in model itemController="hostgroup"}}
         <tr>
           <td style='word-wrap:break-word;' width='100'>
-            {{#link-to 'hostgroup.edit' this}}
-             {{name}}
+            {{#link-to 'hostgroup.edit' hostgroup}}
+             {{hostgroup.title}}
             {{/link-to}}
           </td>
           {{#unless onShowPage}}
-          <td> {{!subnet.name}} </td>
-          <td> {{!domain.name}} </td>
+          <td> {{hostgroup.subnet_name}} </td>
+          <td> {{hostgroup.domain_name}} </td>
           <td> {{#link-to 'hostgroup.edit' this class='btn btn-default'}}Edit{{/link-to}}</td>
           {{/unless}}
         </tr>
@@ -30,4 +36,12 @@
       </tbody>
     </table>
 
-{{outlet}}
+    <div class="row" id="pagination"><div class="col-md-5 hidden-xs"><div class="pull-left pull-bottom darkgray pagination">Displaying <b>{{totalCount}}</b> entries</div></div></div>
+  </div>
+
+  {{#if onShowPage}}
+  <div {{bind-attr class="onShowPage:col-md-9"}} style="border: 1px solid #0072a0">
+    {{outlet}}
+  </div>
+  {{/if}}
+</div>

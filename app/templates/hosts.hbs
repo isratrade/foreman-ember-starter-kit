@@ -1,0 +1,28 @@
+    <table class="table table-bordered" style='table-layout:fixed;'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          {{#unless onShowPage}}
+          <th>Hostgroup</th>
+          {{/unless}}
+        </tr>
+        </thead>
+      <tbody>
+      {{#each host in model}}
+        <tr>
+          <td style='word-wrap:break-word;' width='100'>
+            {{#link-to 'host.edit' host}}
+             {{host.name}}
+            {{/link-to}}
+          </td>
+          <td>
+            {{host.hostgroup_name}}
+          </td>
+        </tr>
+      {{else}}
+        <li>No hosts found.</li>
+      {{/each}}
+      </tbody>
+    </table>
+
+{{outlet}}
