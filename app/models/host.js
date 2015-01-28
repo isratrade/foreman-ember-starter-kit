@@ -62,7 +62,6 @@ export default DS.Model.extend({
   enabled: DS.attr('boolean'),
   puppet_ca_proxy_id: DS.attr('number'),
   puppet_proxy_id: DS.attr('number'),
-  sp_subnet_id: DS.attr('number'),
 
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
