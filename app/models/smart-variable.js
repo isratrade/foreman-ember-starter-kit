@@ -13,5 +13,7 @@ export default DS.Model.extend({
   puppetclass_name: DS.attr('string'),
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
+  override_values: DS.hasMany('override-value')
+
 });
 

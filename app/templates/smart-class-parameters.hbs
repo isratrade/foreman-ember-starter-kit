@@ -1,31 +1,7 @@
-<h1>Smart Class Parameters</h1>
+<h3>Smart Class Parameters ({{model.length}})</h3>
 
-Count is {{model.length}}
+{{#each smart in model}}
+  {{show-item label=smart.parameter value=smart.default_value}}
+{{/each}}
 
-    <table class="table table-bordered" style='table-layout:fixed;'>
-      <thead>
-        <tr>
-          <th>Parameter</th>
-          {{#unless onShowPage}}
-          <th>Default Value</th>
-          {{/unless}}
-        </tr>
-        </thead>
-
-      <tbody>
-      {{#each classParam in model}}
-        <tr>
-          <td style='word-wrap:break-word;' width='100'>
-             {{classParam.parameter}}
-          </td>
-          {{#unless onShowPage}}
-            <td>
-             {{classParam.default_value}}
-            </td>
-          {{/unless}}
-        </tr>
-      {{else}}
-        <li>No smart class parameters found.</li>
-      {{/each}}
-      </tbody>
-    </table>
+{{outlet}}
