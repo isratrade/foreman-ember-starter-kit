@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   actions: {
     saveNewRecord: function() {
       var self = this;
-      var hostgroup = this.store.createRecord('hostgroup', this.get('fields'));
-      hostgroup.save().then(function() {
-        self.transitionToRoute('hostgroups');
+
+      var host = this.store.createRecord('host', this.get('fields'));
+      host.save().then(function() {
+        self.transitionToRoute('hosts');
       }, function(error) {
         console.log(error);
       });
@@ -14,7 +16,7 @@ export default Ember.Controller.extend({
 
     cancel: function() {
       this.get('model').rollback();
-      this.transitionTo('hostgroups');
+      this.transitionTo('hosts');
     }
 
   },

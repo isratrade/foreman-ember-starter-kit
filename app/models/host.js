@@ -14,16 +14,17 @@ export default DS.Model.extend({
   // cpu: DS.attr('string'),
   // memory: DS.attr('string'),
   // vendor: DS.attr('string'),
-  isSelectedAsHypervisor: DS.attr('boolean'),
-  isSelectedAsEngine: DS.attr('boolean'),
+
+  // isSelectedAsHypervisor: DS.attr('boolean'),
+  // isSelectedAsEngine: DS.attr('boolean'),
 
   ip: DS.attr('string'),
   environment_id: DS.attr('number'),
   environment_name: DS.attr('string'),
   mac: DS.attr('string'),
-  sp_mac: DS.attr('string'),
-  sp_ip: DS.attr('string'),
-  sp_name: DS.attr('string'),
+  // sp_mac: DS.attr('string'),
+  // sp_ip: DS.attr('string'),
+  // sp_name: DS.attr('string'),
   build: DS.attr('boolean'),
 
   realm_id: DS.attr('number'),
@@ -41,7 +42,7 @@ export default DS.Model.extend({
   medium_id: DS.attr('number'),
   medium_name: DS.attr('string'),
   model_id: DS.attr('number'),
-  model_name: DS.attr('string'),
+  model_name2: DS.attr('string'), //doesn't work in HostSerializer model_name2 {serialize: false}
   hostgroup_id: DS.attr('number'),
   hostgroup_name: DS.attr('string'),
   owner_id: DS.attr('number'),

@@ -5,23 +5,39 @@
 
  {{text-f value=fields.name label="Name"}}
 
- {{!select-f label='Domain'
-            content=domains
+ {{select-f label='Hostgroup'
+            content=hostgroups
             optionLabelPath="content.name"
             optionValuePath="content.id"
-            selection=content.domain
-            value=content.domain.id
-            prompt="Select Domain"
+            selection=content.hostgroup
+            value=fields.hostgroup_id
+            prompt="Select hostgroup"
             }}
 
- {{!select-f label='Subnet'
-            content=subnets
+ {{select-f label='Locations'
+            content=locations
             optionLabelPath="content.name"
             optionValuePath="content.id"
-            selection=content.subnet
-            value=content.subnet.id
-            prompt="Select Subnet"
+            selection=content.location
+            value=fields.location_id
+            prompt="Select location"
             }}
+
+ {{select-f label='Organizations'
+            content=organizations
+            optionLabelPath="content.name"
+            optionValuePath="content.id"
+            selection=content.organization
+            value=fields.organization_id
+            prompt="Select organization"
+            }}
+
+ {{text-f value=fields.mac label="Mac Address"}}
+ {{text-f value=fields.ip label="IP Address"}}
+ {{text-f value=fields.root_pass label="Root Password"}}
+
+ {{text-f value=fields.model_id label="model_id"}}
+ {{text-f value=fields.model_name label="model_id"}}
 
 
 <br />
