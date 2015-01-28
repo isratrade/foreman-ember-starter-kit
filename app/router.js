@@ -75,6 +75,20 @@ Router.map(function() {
   this.resource("smart-variables");
   this.resource("smart-class-parameters");
 
+  this.resource('hostgroups', function() {
+    this.resource('hostgroup', { path: '/:hostgroup_id' }, function() {
+      this.route('edit');
+    });
+  });
+
+  this.route('domains');
+
+  this.resource('subnets', function() {
+    this.resource('subnet', { path: '/:subnet_id' }, function(){
+      this.route('edit');
+    });
+  });
+
   this.route('review/installation');
   this.route('review/progress');
   this.route("dashboard");

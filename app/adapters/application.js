@@ -9,6 +9,6 @@ export default DS.ActiveModelAdapter.extend({
         // TODO - Why can't adapter access session?
         // Authorization: 'Bearer ' + this.get('session.access_token'),
         Authorization: "Basic " + "YWRtaW46c2VjcmV0"
-      };
+      }
     }.property("session").volatile()
 });
