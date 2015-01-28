@@ -83,6 +83,12 @@ Router.map(function() {
     });
   });
 
+  this.resource('hosts', function() {
+    this.resource('host', { path: '/:host_id' }, function() {
+      this.route('edit');
+    });
+  });
+
   this.route('domains');
 
   this.resource('subnets', function() {
