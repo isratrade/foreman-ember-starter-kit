@@ -2,14 +2,14 @@ import ApplicationSerializer from './application';
 
 export default ApplicationSerializer.extend({
 
-  // normalizeHash: {
-  //     host: function(hash) {
-  //         console.log('HASH');
-  //         console.log(hash);
-  //         delete hash.model_name;
-  //         return hash;
-  //     }
-  // },
+  normalizeHash: {
+      host: function(hash) {
+          console.log('HASH');
+          console.log(hash);
+          delete hash.model_name;
+          return hash;
+      }
+  },
 
   attrs: {
     operatingsystem_name: {serialize: false},
@@ -27,7 +27,7 @@ export default ApplicationSerializer.extend({
     organization_name: {serialize: false},
     location_name: {serialize: false},
     image_name: {serialize: false},
-    model_name2: {key: 'model_name'},
+    model_name: {serialize: false},
   }
 
 });

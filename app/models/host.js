@@ -42,7 +42,7 @@ export default DS.Model.extend({
   medium_id: DS.attr('number'),
   medium_name: DS.attr('string'),
   model_id: DS.attr('number'),
-  model_name2: DS.attr('string'), //doesn't work in HostSerializer model_name2 {serialize: false}
+//  model_name: DS.attr('string'), //doesn't work in HostSerializer model_name {serialize: false}
   hostgroup_id: DS.attr('number'),
   hostgroup_name: DS.attr('string'),
   owner_id: DS.attr('number'),
