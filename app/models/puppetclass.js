@@ -5,5 +5,5 @@ export default DS.Model.extend({
   //module_name2: DS.attr('string'),  //map to module_name2 in PuppetSerializer because of module_name is Ember method
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
-  smartClassParameters: DS.hasMany('smartClassParameter')
+  // smartClassParameters: DS.hasMany('smartClassParameter')
 });

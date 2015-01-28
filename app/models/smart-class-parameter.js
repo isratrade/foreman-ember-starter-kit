@@ -16,6 +16,6 @@ export default DS.Model.extend({
   override_values_count: DS.attr('number'),
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
-  smartClassParameters: DS.hasMany('smartClassParameter')
+  // puppetclass: DS.belongsTo('puppetclass')
 
 });

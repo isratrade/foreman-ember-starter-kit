@@ -70,6 +70,8 @@ Router.map(function() {
   this.resource("puppetclasses", function() {
     this.resource('puppetclass', { path: '/:puppetclass_id' }, function() {
       this.route('edit');
+      this.route("smart-class-parameters");
+      this.route("smart-variables");
     });
   });
   this.resource("smart-variables");
