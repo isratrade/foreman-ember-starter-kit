@@ -66,6 +66,7 @@ Router.map(function() {
       this.route('edit');
       this.route("smart-class-parameters");
       this.route("smart-variables");
+      this.route("parameters");
     });
   });
 
