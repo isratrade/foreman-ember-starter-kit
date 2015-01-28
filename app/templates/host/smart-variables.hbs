@@ -1,0 +1,10 @@
+{{!partial 'smart-variables'}}
+
+<h3>Smart variables ({{model.length}})</h3>
+
+{{#each smart in model}}
+  {{show-item label=smart.variable value=smart.default_value}}
+{{/each}}
+
+
+{{outlet}}

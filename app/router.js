@@ -67,6 +67,7 @@ Router.map(function() {
       this.route("smart-class-parameters");
       this.route("smart-variables");
       this.route("parameters");
+      this.route("puppetclasses");
     });
   });
 
@@ -86,6 +87,7 @@ Router.map(function() {
       this.route("smart-class-parameters");
       this.route("smart-variables");
       this.route("parameters");
+      this.route("puppetclasses");
     });
   });
 

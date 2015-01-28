@@ -1,23 +1,32 @@
+{{#link-to 'hosts' tagName="h1"}}Hosts{{/link-to}}
+
+<div class="row">
+
+  <div {{bind-attr class="onShowPage:col-md-3:col-md-12"}}>
+
     <table class="table table-bordered" style='table-layout:fixed;'>
       <thead>
         <tr>
           <th>Name</th>
           {{#unless onShowPage}}
-          <th>Hostgroup</th>
+          <th>Host group</th>
+          <th>Environment</th>
           {{/unless}}
         </tr>
         </thead>
+
       <tbody>
-      {{#each host in model}}
+      {{#each host in model itemController="host"}}
         <tr>
           <td style='word-wrap:break-word;' width='100'>
-            {{#link-to 'host.edit' host}}
+            {{#link-to 'host' host}}
              {{host.name}}
             {{/link-to}}
           </td>
-          <td>
-            {{host.hostgroup_name}}
-          </td>
+          {{#unless onShowPage}}
+          <td> {{host.hostgroup_name}} </td>
+          <td> {{host.environment_name}} </td>
+          {{/unless}}
         </tr>
       {{else}}
         <li>No hosts found.</li>
@@ -25,4 +34,14 @@
       </tbody>
     </table>
 
-{{outlet}}
+    <div class="row" id="pagination"><div class="col-md-5 hidden-xs"><div class="pull-left pull-bottom darkgray pagination">Displaying <b>{{totalCount}}</b> entries</div></div></div>
+  </div>
+
+  {{#if onShowPage}}
+  <div {{bind-attr class="onShowPage:col-md-9"}} style="border: 1px solid #0072a0">
+    {{outlet}}
+  </div>
+  {{/if}}
+</div>
+
+
