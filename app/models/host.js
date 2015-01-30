@@ -66,6 +66,7 @@ export default DS.Model.extend({
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
 
+  hosgroup:DS.belongsTo('hostgroup'),
 
 });
 

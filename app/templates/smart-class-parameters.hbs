@@ -1,7 +1,9 @@
 <h3>Smart Class Parameters ({{model.length}})</h3>
 
+{{outlet}}
+<hr/>
+
 {{#each smart in model}}
-  {{show-item label=smart.parameter value=smart.default_value}}
+  {{show-item objShow=smart label=smart.parameter value=smart.default_value routeString='smart-class-parameter'}}
 {{/each}}
 
-{{outlet}}

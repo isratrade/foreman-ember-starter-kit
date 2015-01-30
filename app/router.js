@@ -60,7 +60,6 @@ Router.map(function() {
     });
   });
 
-
   this.resource('hostgroups', function() {
     this.resource('hostgroup', { path: '/:hostgroup_id' }, function() {
       this.route('edit');
@@ -78,8 +77,13 @@ Router.map(function() {
       this.route("smart-variables");
     });
   });
-  this.resource("smart-variables");
-  this.resource("smart-class-parameters");
+
+  this.resource("smart-class-parameters", function() {
+    this.resource('smart-class-parameter', { path: '/:smart_variable_id' });
+  });
+  this.resource("smart-variables", function() {
+    this.resource('smart-variable', { path: '/:smart_variable_id' });
+  });
 
   this.resource('hosts', function() {
     this.resource('host', { path: '/:host_id' }, function() {

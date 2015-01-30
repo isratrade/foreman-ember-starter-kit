@@ -22,6 +22,9 @@ export default DS.Model.extend({
   ptable_name: DS.attr('string'),
   medium_id: DS.attr('number'),
   medium_name: DS.attr('string'),
+  realm_id: DS.attr('number'),
+  realm_name: DS.attr('string'),
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
+//  hosts:DS.hasMany('host'),
 });

@@ -11,6 +11,7 @@ export default ApplicationSerializer.extend({
     architecture_name: {serialize: false},
     medium_name: {serialize: false},
     ptable_name: {serialize: false},
+    realm_name: {serialize: false},
     sp_name: {serialize: false},
     sp_mac: {serialize: false},
     sp_ip: {serialize: false},
