@@ -1,5 +1,13 @@
 {{#link-to 'hostgroups' tagName="h1"}}Host Groups{{/link-to}}
 
+({{cntFilteredHostgroups}} of {{model.length}})
+
+{{#each error in errors.email}}
+  {{error.message}}
+{{/each}}
+
+{{view Ember.TextField value=search placeholder="search" classNames="search"}}
+
 <div class="row">
 
   <div {{bind-attr class="onShowPage:col-md-3:col-md-12"}}>
@@ -16,7 +24,7 @@
         </thead>
 
       <tbody>
-      {{#each hostgroup in model itemController="hostgroup"}}
+      {{#each hostgroup in filteredHostgroups itemController="hostgroup"}}
         <tr>
           <td style='word-wrap:break-word;' width='100'>
             {{#link-to 'hostgroup' hostgroup}}
