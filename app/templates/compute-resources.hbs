@@ -1,0 +1,45 @@
+{{#link-to 'compute-resources' tagName="h1"}}Compute Resources{{/link-to}}
+
+<div class="row">
+
+  <div {{bind-attr class="onShowPage:col-md-3:col-md-12"}}>
+
+    <table class="table table-bordered" style='table-layout:fixed;'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          {{#unless onShowPage}}
+          <th></th>
+          <th></th>
+          {{/unless}}
+        </tr>
+        </thead>
+
+      <tbody>
+      {{#each cr in model itemController="compute-resource"}}
+        <tr>
+          <td style='word-wrap:break-word;' width='100'>
+            {{#link-to 'compute-resource' cr}}
+             {{cr.name}}
+            {{/link-to}}
+          </td>
+          {{#unless onShowPage}}
+          <td> {{!hostgroup.subnet_name}} </td>
+          <td> {{!hostgroup.domain_name}} </td>
+          {{/unless}}
+        </tr>
+      {{else}}
+        <li>No compute resources found.</li>
+      {{/each}}
+      </tbody>
+    </table>
+
+    <div class="row" id="pagination"><div class="col-md-5 hidden-xs"><div class="pull-left pull-bottom darkgray pagination">Displaying <b>{{totalCount}}</b> entries</div></div></div>
+  </div>
+
+  {{#if onShowPage}}
+  <div {{bind-attr class="onShowPage:col-md-9"}} style="border: 1px solid #0072a0">
+    {{outlet}}
+  </div>
+  {{/if}}
+</div>

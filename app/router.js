@@ -105,11 +105,16 @@ Router.map(function() {
     });
   });
 
+  this.resource("compute-resources", function() {
+    this.resource('compute-resource', { path: '/:compute_resource_id' });
+  });
+
   this.route('review/installation');
   this.route('review/progress');
   this.route("dashboard");
   this.route("radiator");
   this.route("home");
+
 });
 
 export default Router;
