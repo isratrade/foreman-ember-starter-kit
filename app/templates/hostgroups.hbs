@@ -9,7 +9,13 @@
 
 <div class="row">
   <div class='col-md-4'>
-  {{input type='text' value=search placeholder='Search here ...' class='form-control'}}
+  {{input type='text' value=searchText placeholder='Search here ...' class='form-control'}}
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-4'>
+  {{input type='text' value=filterText placeholder='Filter here ...' class='form-control'}}
   </div>
 </div>
 
@@ -31,7 +37,7 @@
         </thead>
 
       <tbody>
-      {{#each hostgroup in filteredHostgroups itemController="hostgroup"}}
+      {{#each hostgroup in filteredModel itemController="hostgroup"}}
         <tr>
           <td style='word-wrap:break-word;' width='100'>
             {{#link-to 'hostgroup' hostgroup}}

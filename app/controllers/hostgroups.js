@@ -1,21 +1,24 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  searchedHostgroups: function() {
-    var search = this.get('search').toLowerCase();
-    //return this.filterProperty('firstname', search);  // this searches ONLY by first name Joe, not partial, Jo
-    return this.filter(function(hostgroup) {
-      return (hostgroup.get('name').toLowerCase().indexOf(search) !== -1);
-    });
-  }.property('search', 'this.@each'),
+  filterText: '',
+  searchText: '',
 
   filteredHostgroups: function() {
-    return this.get('search') ? this.get('searchedHostgroups') : this;
-  }.property('search', 'searchedHostgroups'),
+    var filterText = this.get('filterText').toLowerCase();
+    // this ONLY filters by exact match, NOT partial
+    // return this.filterProperty('title', filterText);
+    return this.filter(function(hostgroup) {
+      return (hostgroup.get('title').toLowerCase().indexOf(filterText) !== -1);
+    });
+  }.property('filterText', 'this.@each'),
 
-  cntFilteredHostgroups: function() {
-      return this.get('filteredHostgroups').get('length');
-  }.property('search', 'this.@each')
+  cntFilteredHostgroups: Ember.computed.alias('filteredHostgroups.length'),
+
+  filteredModel: function() {
+    return this.get('filterText') ? this.get('filteredHostgroups') : this;
+  }.property('filterText', 'filteredHostgroups'),
+
 
 
 });
