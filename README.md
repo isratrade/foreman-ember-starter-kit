@@ -1,6 +1,6 @@
 # foreman-ember-starter-kit
 
-This repo is an [ember-cli](http://www.ember-cli.com/) project which connects to the [Foreman](https://github.com/theforeman/foreman/) API v2.
+This repo is an [ember-cli](http://www.ember-cli.com/) project which connects to the [Foreman](https://github.com/theforeman/foreman/) API v2 to quickly get up and running using [EmberJS](http://www.emberjs.com/) to interface with Foreman.
 
 ## Prerequisites
 
